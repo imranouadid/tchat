@@ -6,7 +6,7 @@ You need to install these dependencies below on your machine.
 - MySQL
 - Apache server (Xampp)
 
-## Deploy 
+## Deploy
 To deploy this application you need to have a domain name or create a virtual host on your local machine.
 
 ## How to run this application on local machine
@@ -20,14 +20,14 @@ Now locate yourself in (about) the line 487 where you probably will find the fol
 # Virtual hosts
 #Include etc/extra/httpd-vhosts.conf
 ```
-As you can see, the Include statement that includes the httpd-vhosts.conf file is commented. 
+As you can see, the Include statement that includes the httpd-vhosts.conf file is commented.
 Proceed to modify the line uncommenting that line:
 ```bash
 # Virtual hosts
 Include etc/extra/httpd-vhosts.conf
 ```
 ### 2. Create a custom domain in the hosts file of your system
-To start, edit the hosts file located in /etc using your favorite code editor, or just by executing the following 
+To start, edit the hosts file located in /etc using your favorite code editor, or just by executing the following
 command in the terminal:
 ```bash
 # Virtual hosts
