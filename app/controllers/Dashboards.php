@@ -128,7 +128,7 @@ class Dashboards extends Controller{
                 }
                 $messages = $this->messageModel->getMessagesByConversation($conversationId);
 
-                echo json_encode($messages);
+                echo json_encode(['conversation_id' => $conversationId, 'messages' => $messages]);
             }
 
         }

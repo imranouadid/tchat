@@ -105,6 +105,7 @@
                         <form method="POST" action="#" id="send_msg_conversation_form">
                             <div class="form-group">
                                 <input id="conversation_id" name="conversation_id" type="hidden" value="">
+                                <input id="user_id" name="user_id" type="hidden" value="">
                                 <input id="last_msg_id" name="last_msg_id" type="hidden" value="">
                                 <textarea class="form-control form-control-lg
                                     <?php echo (!empty($data['message_err'])? 'is-invalid':'')?>"
@@ -180,10 +181,14 @@
                 },
                 dataType:"json",
                 success:function(data){
+                    console.log(data['conversation_id']);
                     if(data){
                         $('.conversation-messages').empty();
-                        data.map(msg => {
-                            $('#conversation_id').val(msg.conversation_id);
+                        $('#user_' + userId).attr('conversation_id', data['conversation_id'])
+                        $('#user_id').val(userId);
+                        $('#conversation_id').val(data['conversation_id']);
+                        data['messages'].map(msg => {
+                            // $('#conversation_id').val(data['conversation_id']);
                             $('#last_msg_id').val(msg.id);
                             message = `<p class="card-text">
                                         <span class="badge rounded-pill bg-primary">
@@ -212,6 +217,8 @@
 
             let conversationId = $('#conversation_id').val();
             let conversationIdErr = '';
+
+
 
             let url = baseURL+'/dashboards/sendMessageConversation';
 
