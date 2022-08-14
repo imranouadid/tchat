@@ -80,5 +80,7 @@ $ gedit /opt/lampp/htdocs/tchat/app/config/config.php
     define('APP_VERSION','1.0.0');
 
 ```
-Then you should import database file to your database server, check out this path to find database file: tchat/DB/tchat.sql
+### Import database file
+Then you should import database file to your database server, check out this path to find database file: tchat/DB/tchat.sql .
+### Test your app
 Go to your browser and type http://tchat.wip/. That's all.
